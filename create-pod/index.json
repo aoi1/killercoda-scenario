@@ -1,6 +1,6 @@
 {
-  "title": "Kubernetes multi-step verification",
-  "description": "Uses a Kubernetes cluster and performs user input verification in all steps",
+  "title": "Kubernetes Pod Creation",
+  "description": "Uses a Kubernetes cluster and verificate to create a pod",
   "details": {
     "intro": {
       "text": "intro.md"
@@ -12,9 +12,13 @@
         "verify": "step1/verify.sh"
       },
       {
+        "title": "Access to a pod",
+        "text": "step2/text.md"
+      },
+      {
         "title": "Delete a pod",
-        "text": "step2/text.md",
-        "verify": "step2/verify.sh"
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       }
     ],
     "finish": {

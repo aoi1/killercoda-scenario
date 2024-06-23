@@ -1,5 +1,5 @@
 {
-  "title": "Kubernetes verification",
+  "title": "Kubernetes Broken Deployment (Japanese)",
   "description": "Uses a one node Kubernetes cluster and performs user input verification in all steps",
   "details": {
     "intro": {
