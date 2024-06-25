@@ -7,10 +7,15 @@
     },
     "steps": [
       {
-        "title": "Fix a deployment",
+        "title": "Check a deployment",
         "background": "step1/background.sh",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step1/text.md"
+      },
+      {
+        "title": "Fix a deployment",
+        "background": "step2/background.sh",
+        "text": "step2/text.md",
+        "verification": "step2/verify.sh"
       }
     ],
     "finish": {

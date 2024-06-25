@@ -3,5 +3,5 @@
 
 ヒント：
 ```
-kubectl delete -f my-app.yaml
+kubectl delete -f my-pod.yaml
 ```
