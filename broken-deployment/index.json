@@ -15,7 +15,7 @@
         "title": "Fix a deployment",
         "background": "step2/background.sh",
         "text": "step2/text.md",
-        "verification": "step2/verify.sh"
+        "verify": "step2/verify.sh"
       }
     ],
     "finish": {
