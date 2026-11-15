@@ -1,0 +1,31 @@
+{
+  "title": "① Podをこわす",
+  "description": "Podを作って消してみる。誰が直してくれる？",
+  "details": {
+    "intro": {
+      "title": "はじめに",
+      "text": "intro/text.md",
+      "background": "intro/background.sh",
+      "foreground": "intro/foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Podを作る",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Podを消す",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      }
+    ],
+    "finish": {
+      "title": "ふりかえり",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

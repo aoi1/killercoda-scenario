@@ -1,6 +1,6 @@
 {
-  "title": "つくって、こわして、直して学ぶKubernetes",
-  "description": "Pod・Deployment・Serviceを1つずつ壊して、それぞれの役割を体験するハンズオン",
+  "title": "③ Serviceをこわす",
+  "description": "Podは元気なのに、アプリにつながらないのはなぜ？",
   "details": {
     "intro": {
       "title": "はじめに",
@@ -10,18 +10,16 @@
     },
     "steps": [
       {
-        "title": "① Podをこわす",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "title": "Serviceを見てみる",
+        "text": "step1/text.md"
       },
       {
-        "title": "② Deploymentをこわす",
+        "title": "Serviceをこわす",
         "text": "step2/text.md",
-        "background": "step2/background.sh",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "③ Serviceをこわす",
+        "title": "直す",
         "text": "step3/text.md",
         "verify": "step3/verify.sh"
       }
