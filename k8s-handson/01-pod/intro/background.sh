@@ -13,4 +13,6 @@ done
 cp -r /opt/handson/manifests /root/manifests
 bash /opt/handson/setup.sh
 
+until kubectl get nodes; do sleep 1; done
+
 touch /tmp/handson-ready
