@@ -1,0 +1,37 @@
+{
+  "title": "つくって、こわして、直して学ぶKubernetes",
+  "description": "Pod・Deployment・Serviceを1つずつ壊して、それぞれの役割を体験するハンズオン",
+  "details": {
+    "intro": {
+      "title": "はじめに",
+      "text": "intro/text.md",
+      "background": "intro/background.sh",
+      "foreground": "intro/foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "① Podをこわす",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "② Deploymentをこわす",
+        "text": "step2/text.md",
+        "background": "step2/background.sh",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "③ Serviceをこわす",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      }
+    ],
+    "finish": {
+      "title": "ふりかえり",
+      "text": "finish/text.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
