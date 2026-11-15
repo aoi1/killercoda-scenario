@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "path": "k8s-handson" },
+    { "path": "create-pod" },
+    { "path": "broken-deployment" },
+    { "path": "kubernetes-2node-multi-step-verification" }
+  ]
+}
