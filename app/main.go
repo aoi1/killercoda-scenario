@@ -49,6 +49,9 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		// keep-aliveで同じPodにつながり続けないよう、毎回接続を切る。
+		// こうするとリロードのたびにServiceが振り分け直す様子が見える
+		w.Header().Set("Connection", "close")
 		data := struct{ PodName, Version, Color string }{podName, version, color}
 		if err := page.Execute(w, data); err != nil {
 			log.Println(err)
