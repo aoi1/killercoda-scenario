@@ -12,15 +12,6 @@
       {
         "title": "コマンドを実行してみる",
         "text": "step1/text.md"
-      },
-      {
-        "title": "クラスタの中をのぞいてみる",
-        "text": "step2/text.md"
-      },
-      {
-        "title": "ターミナルをもう1つ開く",
-        "text": "step3/text.md",
-        "verify": "step3/verify.sh"
       }
     ],
     "finish": {
