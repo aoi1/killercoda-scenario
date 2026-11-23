@@ -2,6 +2,7 @@
   "title": "つくって、こわして、直して学ぶKubernetes",
   "description": "Pod・Deployment・Serviceを1つずつ壊して、それぞれの役割を体験するハンズオン",
   "items": [
+    { "path": "00-kubectl" },
     { "path": "01-pod" },
     { "path": "02-deployment" },
     { "path": "03-service" }
