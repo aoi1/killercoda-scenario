@@ -4,7 +4,13 @@
 
 ## やること
 
-配布済みのYAMLファイルを使って、Podを作ります。
+まずは環境に何もないことを確認しましょう。
+
+```
+kubectl get pods
+```{{exec}}
+
+次に配布済みのYAMLファイルを使って、Podを作ります。
 
 ```
 kubectl apply -f ~/manifests/01-pod/pod.yaml
