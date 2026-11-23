@@ -1,6 +1,6 @@
 {
   "title": "① Podをこわす",
-  "description": "Podを作って消してみる。誰が直してくれる？",
+  "description": "Podを作って、消して、復活させてみる。誰が直してくれる？",
   "details": {
     "intro": {
       "title": "はじめに",
@@ -18,6 +18,11 @@
         "title": "Podを消す",
         "text": "step2/text.md",
         "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Podを復活させる",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
       }
     ],
     "finish": {
