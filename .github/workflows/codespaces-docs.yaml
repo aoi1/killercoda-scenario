@@ -1,0 +1,25 @@
+name: Check Codespaces docs
+
+on:
+  pull_request:
+    paths:
+      - "k8s-handson/**"
+      - "docs/codespaces/**"
+      - "scripts/gen-codespaces-docs.py"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate docs
+        run: python3 scripts/gen-codespaces-docs.py
+      - name: Fail if docs are out of date
+        run: |
+          if ! git diff --exit-code docs/codespaces; then
+            echo "::error::docs/codespaces が古いままです。python3 scripts/gen-codespaces-docs.py を実行してコミットしてください"
+            exit 1
+          fi
