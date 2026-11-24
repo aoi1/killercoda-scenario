@@ -6,11 +6,3 @@ spec:
   containers:
   - name: app
     image: ghcr.io/aoi1/handson-app:v1
-    ports:
-    - containerPort: 8080
-    env:
-    # 自分のPod名を環境変数で受け取る（Downward API）
-    - name: POD_NAME
-      valueFrom:
-        fieldRef:
-          fieldPath: metadata.name
