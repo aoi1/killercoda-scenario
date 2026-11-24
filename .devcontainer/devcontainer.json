@@ -1,0 +1,26 @@
+{
+  "name": "つくって、こわして、直して学ぶKubernetes",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "1.35.0",
+      "helm": "none",
+      "minikube": "none"
+    }
+  },
+  "forwardPorts": [30080],
+  "portsAttributes": {
+    "30080": {
+      "label": "アプリ",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postStartCommand": "bash .devcontainer/post-start.sh",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["docs/codespaces/README.md"]
+    }
+  }
+}
