@@ -4,6 +4,14 @@
 
 ## やること
 
+消す前に、いまのPodの名前を見ておきましょう。
+
+```
+kubectl get pods
+```{{exec}}
+
+Podを1つ消します。
+
 ```
 kubectl delete pod $(kubectl get pods -l app=hello -o jsonpath='{.items[0].metadata.name}')
 ```{{exec}}
@@ -12,15 +20,19 @@ kubectl delete pod $(kubectl get pods -l app=hello -o jsonpath='{.items[0].metad
 
 ## 観察する
 
-Tab 2を見てください。何が起きましたか？ ①と比べてみましょう。
-
-<details><summary>ヒント</summary>
-
-消したPodが `Terminating` になるのと同時に、**新しい名前のPod**が作られているはずです。
+もう一度、Podの状態を見てみましょう。
 
 ```
 kubectl get pods
 ```{{exec}}
+
+消す前と比べて、何が変わりましたか？ ①と比べてみましょう。
+
+<details><summary>ヒント</summary>
+
+- Podの数は3つのままです
+- 消したPodの名前がなくなり、**新しい名前のPod**が1つ増えています
+- 新しいPodは、`AGE`（作られてからの時間）がほかのPodより短くなっています
 
 </details>
 

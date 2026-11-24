@@ -10,7 +10,13 @@ kubectl apply -f ~/manifests/02-deployment/deployment-broken.yaml
 
 ## 観察する
 
-Tab 2と、ブラウザのアプリを見てみましょう。
+Podの状態と、ブラウザのアプリを見てみましょう。
+
+```
+kubectl get pods
+```{{exec}}
+
+少し時間がかかることがあるので、何回か実行してみてください。
 
 - 新しいPodはどんな状態になっていますか？
 - アプリはまだ開けますか？ バージョンはいくつですか？
