@@ -14,6 +14,12 @@ OUT = ROOT / "docs" / "codespaces"
 
 APP_LINK = "（「ポート」タブの `30080` の行にある地球儀のアイコンを押して開きます）"
 
+# Killercodaではシナリオごとに新しい環境になるが、Codespacesでは1つのクラスタで続けて進める。
+# 前のシナリオで作ったものが残って手順と合わなくなるので、片付けるコマンドを準備に足す
+CLEANUP = {
+    "02-deployment": ["kubectl delete pod hello-pod --ignore-not-found"],
+}
+
 NOTE = """> **Codespacesで進める場合の読み替え**
 >
 > - 画面の配置がKillercodaとは違います。手順はこのページを、ターミナルはCodespacesの画面下を使ってください
@@ -67,7 +73,7 @@ def generate(name):
         intro_body.strip() + "\n",
     ]
 
-    commands = setup_commands(scenario_dir, details)
+    commands = CLEANUP.get(name, []) + setup_commands(scenario_dir, details)
     if commands:
         parts.append(
             "## Codespacesでの準備\n\n"

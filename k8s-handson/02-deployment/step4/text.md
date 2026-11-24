@@ -10,12 +10,10 @@ kubectl rollout undo deployment/hello
 
 ## 観察する
 
-Tab 2で、`ImagePullBackOff` のPodが消えていくのを確認してください。
+`ImagePullBackOff` のPodが消えていくのを確認してください。何回か実行してみましょう。
 
 ```
 kubectl get pods
 ```{{exec}}
-
-確認できたら、Tab 2のコマンドは `Ctrl + C` で止めてかまいません。
 
 「Check」を押しましょう。

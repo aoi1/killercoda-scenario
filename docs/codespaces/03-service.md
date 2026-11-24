@@ -181,10 +181,10 @@ kubectl apply -f ~/manifests/04-bonus/deployment-v2.yaml
 ```
 
 ```
-kubectl get pods -w
+kubectl get pods
 ```
 
-更新が終わったら（`Ctrl + C` で止めてください）、ブラウザでリロードしてみましょう。画面の色とバージョンが変わるはずです。
+何回か実行して、Podがすべて新しいものに入れ替わったら、ブラウザでリロードしてみましょう。画面の色とバージョンが変わるはずです。
 
 <details><summary>ヒント</summary>
 

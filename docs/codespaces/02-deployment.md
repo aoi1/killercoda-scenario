@@ -23,22 +23,11 @@ Deploymentは、「Podを3つ動かしておいてほしい」のように**あ�
 Killercodaでは自動で準備される部分です。はじめる前に、次のコマンドを実行してください。
 
 ```
+kubectl delete pod hello-pod --ignore-not-found
 kubectl apply -f ~/manifests/03-service/service.yaml
 ```
 
 ## Deploymentを作る
-
-### 準備：ターミナルをもう1つ開く
-
-ターミナルの上にあるタブの「**+**」を押して、2つ目のターミナル（Tab 2）を開いてください。Tab 2では、Podの様子をずっと表示させておきます。
-
-```
-kubectl get pods -w
-```
-
-`-w` は「変化があるたびに表示する」オプションです。このコマンドは止めずに、そのまま流しておきます。
-
-ここからは **Tab 1** に戻ってコマンドを実行してください。
 
 ### やること
 
@@ -48,7 +37,13 @@ kubectl apply -f ~/manifests/02-deployment/deployment.yaml
 
 ### 観察する
 
-Tab 2を見てください。Podが**3つ**作られていくはずです。
+Podの状態を見てみましょう。
+
+```
+kubectl get pods
+```
+
+Podが**3つ**作られているはずです。3つとも `STATUS` が `Running` になるまで、何回か実行してみてください。
 
 3つとも `Running` になったら、ブラウザでアプリを開いてみましょう。
 
@@ -80,6 +75,14 @@ kubectl get pods
 
 ### やること
 
+消す前に、いまのPodの名前を見ておきましょう。
+
+```
+kubectl get pods
+```
+
+Podを1つ消します。
+
 ```
 kubectl delete pod $(kubectl get pods -l app=hello -o jsonpath='{.items[0].metadata.name}')
 ```
@@ -88,15 +91,19 @@ kubectl delete pod $(kubectl get pods -l app=hello -o jsonpath='{.items[0].metad
 
 ### 観察する
 
-Tab 2を見てください。何が起きましたか？ ①と比べてみましょう。
-
-<details><summary>ヒント</summary>
-
-消したPodが `Terminating` になるのと同時に、**新しい名前のPod**が作られているはずです。
+もう一度、Podの状態を見てみましょう。
 
 ```
 kubectl get pods
 ```
+
+消す前と比べて、何が変わりましたか？ ①と比べてみましょう。
+
+<details><summary>ヒント</summary>
+
+- Podの数は3つのままです
+- 消したPodの名前がなくなり、**新しい名前のPod**が1つ増えています
+- 新しいPodは、`AGE`（作られてからの時間）がほかのPodより短くなっています
 
 </details>
 
@@ -124,7 +131,13 @@ kubectl apply -f ~/manifests/02-deployment/deployment-broken.yaml
 
 ### 観察する
 
-Tab 2と、ブラウザのアプリを見てみましょう。
+Podの状態と、ブラウザのアプリを見てみましょう。
+
+```
+kubectl get pods
+```
+
+少し時間がかかることがあるので、何回か実行してみてください。
 
 - 新しいPodはどんな状態になっていますか？
 - アプリはまだ開けますか？ バージョンはいくつですか？
@@ -177,13 +190,11 @@ kubectl rollout undo deployment/hello
 
 ### 観察する
 
-Tab 2で、`ImagePullBackOff` のPodが消えていくのを確認してください。
+`ImagePullBackOff` のPodが消えていくのを確認してください。何回か実行してみましょう。
 
 ```
 kubectl get pods
 ```
-
-確認できたら、Tab 2のコマンドは `Ctrl + C` で止めてかまいません。
 
 「Check」を押しましょう。
 
