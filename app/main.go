@@ -37,9 +37,10 @@ var page = template.Must(template.New("page").Parse(`<!doctype html>
 `))
 
 func main() {
-	podName := os.Getenv("POD_NAME")
-	if podName == "" {
-		podName = "（POD_NAMEが設定されていません）"
+	// Pod内のホスト名はPod名と同じなので、マニフェストで何も設定しなくてもPod名がわかる
+	podName, err := os.Hostname()
+	if err != nil {
+		podName = "（Pod名がわかりませんでした）"
 	}
 
 	// バージョンが変わったことがひと目でわかるように背景色を変える
