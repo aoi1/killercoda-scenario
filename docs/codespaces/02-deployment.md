@@ -109,7 +109,7 @@ kubectl get pods
 
 ### なぜ？
 
-Deploymentは「Podが3つある」というあるべき状態を守ってくれます。1つ減ったことに気づいて、**Kubernetesが自動で**作り直してくれました。
+Deploymentをつくるときに「Podが3つ必要」と定義しました。Kubernetesの仕組みで1つ減ったことに気づいて、**Kubernetesが自動で**作り直してくれました。
 
 確認できたら「Check」を押して次に進みましょう。
 
