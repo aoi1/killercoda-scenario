@@ -57,3 +57,7 @@ Codespacesは、起動しているあいだ無料枠を使います。使い終�
 
 - https://github.com/codespaces を開き、使ったCodespaceの「…」から「Stop codespace」を押す
 - もう使わない場合は「Delete」で消してかまいません
+
+## 手元のマシンで進めたいときは
+
+[手元のマシンで進める](../local/README.md) を見てください。
